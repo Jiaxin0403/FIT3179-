@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple donut chart with embedded data.",
+  "title": {
+    "fontSize": 15,
+    "text": "Proportion of Day/night"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/Jiaxin0403/FIT3179-/main/data.csv"
+  },
+  "width": "container",
+  "height": "container",
+  "transform": [
+    {
+      "aggregate": [
+        {
+          "op": "count",
+          "field": "acq_date",
+          "as": "count_of_records"
+        }
+      ],
+      "groupby": ["daynight"]
+    }
+  ],
+
+  "mark": { "type": "arc", "innerRadius": 100 ,"tooltip":true},
+  "encoding": {
+    "theta": { "field": "count_of_records", "type": "quantitative" },
+    "color": { "field": "daynight", "type": "nominal" }
+  }
+}

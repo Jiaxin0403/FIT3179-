@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A bubbleplot showing horsepower on x, miles per gallons on y, and binned acceleration on size.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Jiaxin0403/FIT3179-/main/data.csv"
+  },
+  "title": {
+    "fontSize": 30,
+    "text": "Frp vs Scan"
+  },
+  "width": "container",
+  "height": "container",
+  "layer": [
+    {
+      "mark": { "type": "point", "tooltip": { "content": "data" } },
+
+      "encoding": {
+        "x": { "field": "frp", "type": "quantitative" },
+        "y": { "field": "scan", "type": "quantitative" },
+        "size": {
+          "field": "acq_time",
+          "type": "quantitative"
+        },
+
+        "fillOpacity": { "value": 0.5 },
+        "strokeOpacity": { "value": 0.5 }
+      }
+    },
+
+    {
+      "mark": "rule",
+      "encoding": {
+        "y": { "field": "scan", "aggregate": "median" },
+        "size": { "value": 2 },
+        "color": { "value": "gray" }
+      }
+    },
+
+    {
+      "mark": "rule",
+      "encoding": {
+        "x": { "field": "frp", "aggregate": "median" },
+        "size": { "value": 2 },
+        "color": { "value": "gray" },
+        "strokeDash": { "value": [2, 2] }
+      }
+    }
+  ]
+}

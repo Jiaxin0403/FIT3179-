@@ -1,9 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Australian Bush fire satellite data (NASA)",
-  "width": 1200,
-  "height": 400,
-  "title": "Australian Bush fire satellite data (NASA)",
+  "width": "container",
+  "height": 500,
+  "title": {
+    "fontSize": 30,
+    "text": "Australian Bush fire satellite data (NASA)",
+    "subtitle": "1/9/2019-31/12/2019"
+  },
 
   "layer": [
     {
@@ -31,13 +35,14 @@
       "projection": {
         "type": "mercator"
       },
-      "params": [{
-        "name": "dayornight",
-        "select": {"type": "point", "fields": ["daynight"]},
-        "bind": {"input": "select", "options": [null, "D", "N"]}
-      }],
+      "params": [
+        {
+          "name": "dayornight",
+          "select": { "type": "point", "fields": ["daynight"] },
+          "bind": { "input": "select", "options": [null, "D", "N"] }
+        }
+      ],
       "mark": { "type": "circle", "tooltip": { "content": "data" } },
- 
 
       "encoding": {
         "longitude": {

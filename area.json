@@ -1,0 +1,70 @@
+{
+  "title": {
+    "fontSize": 30,
+    "text": "Count of Australian Bush fire by Date",
+    "subtitle": "1/9/2019-31/12/2019"
+  },
+ 
+  "width": "container",
+  "height": "container",
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/Jiaxin0403/FIT3179-/main/data.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [
+        {
+          "op": "count",
+          "field": "acq_date",
+          "as": "count_of_records"
+        }
+      ],
+      "groupby": ["acq_date", "daynight"]
+    }
+  ],
+
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "industry",
+          "select": { "type": "point", "fields": ["daynight"] },
+          "bind": "legend"
+        },
+        {
+          "name": "brush",
+          "select": { "type": "interval", "encodings": ["x"] }
+        }
+      ],
+      "mark": { "type": "area", "tooltip": { "content": "data" } },
+
+      "encoding": {
+        "x": { "field": "acq_date" },
+        "y": { "field": "count_of_records", "type": "quantitative" },
+        "color": { "field": "daynight" },
+        "opacity": {
+          "condition": { "param": "industry", "value": 1 },
+          "value": 0.2
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": { "param": "brush" }
+        }
+      ],
+      "mark": "rule",
+      "encoding": {
+        "y": {
+          "aggregate": "mean",
+          "field": "count_of_records",
+          "type": "quantitative"
+        },
+        "color": { "value": "firebrick" },
+        "size": { "value": 3 }
+      }
+    }
+  ]
+}
