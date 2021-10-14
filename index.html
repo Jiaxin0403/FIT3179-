@@ -9,18 +9,116 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        article {
+            margin: 0 100px;
+            width: 1600px;
+        }
+
+
+        .title {
+            background-image: url('title.jpg');
+            background-size: "100%";
+            color: white;
+            height: 200px;
+            display: grid;
+            grid-template-rows: 50% 50%;
+            align-content: center;
+            padding-left: 30px;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        .charts {
+            display: grid;
+            grid-template-columns: 500px 700px 400px;
+            grid-template-rows: 600px 600px 800px;
+        }
+
+        #bar {
+            grid-area: 1/1/4/1;
+        }
+
+        #map {
+            grid-area: 1/2/1/3;
+        }
+
+        #pie {
+            grid-area: 1/3/1/3;
+        }
+
+        #area {
+            grid-area: 2/2/2/4;
+        }
+
+        #scatter {
+            grid-area: 3/2/3/4;
+        }
+
+        .charts div{
+            border: 0.5px solid lightgray;
+            border-radius: 10px;
+        }
+
+    </style>
+
 </head>
 
+
 <body>
-    <div id="v1"></div>
-    <div id="v2"></div>
+
+    <article>
+
+        <div class="title">
+
+            <h1>
+                Australian Bush fire satellite data (NASA)
+            </h1>
+            <h2>
+
+                Australian Fire data provided by NASA satellite's MODIS and VIIRS (JAN 31st)
+            </h2>
+
+        </div>
+
+        <section>
+            <h2>Context
+            </h2>
+            <h4>
+                The Australian bushfire has been devastating. It has caused massive loss of wildlife, forest land, and
+                has even to led human casualties. There have been huge undertakings by the fire department on
+                controlling the bushfire and recovery activity.
+                Thanks to NASA the satellite data by MODIS and VIIRS , near real-time data is made available publically.
+                With Fire still active, with the latest one near capital city of Canberra.
+                The purpose of putting this dataset here is to gain useful insights from this data and make it available
+                to everyone.
+            </h4>
+        </section>
+
+        <section class="charts">
+
+            <div id="map"></div>
+            <div id="area"></div>
+            <div id="scatter"></div>
+            <div id="pie"></div>
+            <div id="bar"></div>
+        </section>
+
+    </article>
 </body>
 
 <script type="text/javascript">
     // https: //raw.githubusercontent.com/alwaysblazing/Australia-State-TopoJson-MapChart/master/au-states-topo.json
 
-    vegaEmbed("#v1", "map.json");
-    vegaEmbed("#v2", "bar.json");
+    vegaEmbed("#map", "map.json");
+    vegaEmbed("#area", "area.json");
+    vegaEmbed("#scatter", "scatter.json");
+    vegaEmbed("#pie", "pie.json");
+    vegaEmbed("#bar", "bar.json");
+
+    // https://raw.githubusercontent.com/Jiaxin0403/FIT3179-/main/data.csv
 </script>
 
 </html>
