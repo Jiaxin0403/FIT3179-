@@ -5,7 +5,7 @@
     "url": "https://raw.githubusercontent.com/Jiaxin0403/FIT3179-/main/data.csv"
   },
   "title": {
-    "fontSize": 15,
+    "fontSize": 15  ,
     "text": "Comparison of the number of different satellite observations"
   },
 
