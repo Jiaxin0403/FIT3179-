@@ -9,7 +9,7 @@
     "url": "https://raw.githubusercontent.com/Jiaxin0403/FIT3179-/main/data.csv"
   },
   "width": "container",
-  "height": "container",
+  "height": 650,
   "transform": [
     {
       "aggregate": [

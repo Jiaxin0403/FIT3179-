@@ -37,7 +37,7 @@
             position: relative;
             display: grid;
             grid-template-columns: 25% 45% 30%;
-            grid-template-rows: 600px 600px 600px;
+            grid-template-rows: 750px 600px 600px;
         }
 
         #bar {
@@ -102,55 +102,68 @@
 
         <section class="charts">
 
-            <div id="map"></div>
-            <div id="area"></div>
-            <div id="scatter"></div>
-            <div id="pie"></div>
-            <div id="bar"></div>
 
-            <section style="position: absolute; top:440px  ;left: 26%;width:29%;font-size: 0.8rem;">
-                In 2019, the combined effects of long-term warming, insufficient rainfall and abnormal ocean circulation
-                made Australia's ground conditions extremely prone to fires
-                The bushfires swept through many parts of the Australian continent, burning in the north and moving to
-                the more populous southern and southeastern regions
-                The fire mainly occurred on the southeast coast of Australia, which is the most densely populated area
-                of the continent
-            </section>
-            <!-- time area -->
-            <section style="position: absolute; top:700px;left:36%;width:29%;font-size: 0.8rem;">
-                September 2019 was the month with the least number of fires, but with the advent of November and
-                December, the number of fires increased sharply.
-                Although the number of fires in late November has a downward trend, after entering December, the overall
-                increase has occurred.
-                The proportion of fires occurring during the day continues to increase. This shows that with dry
-                climates and rising temperatures, the risk of fires is getting higher and higher.
+            <div id="map">
+                <section id="mapchart" style="width: 100%;">
 
-            </section>
-            <!-- pie -->
-            <section style="position: absolute; top:260px;left:80%;width:5%;font-size: 0.8rem;">
-                In general, the proportion of fires in the daytime is higher than that at night.
+                </section>
+                <section style="padding: 10px;font-size: 0.8rem;">
+                    In 2019, the combined effects of long-term warming, insufficient rainfall and abnormal ocean
+                    circulation
+                    made Australia's ground conditions extremely prone to fires
+                    The bushfires swept through many parts of the Australian continent, burning in the north and
+                    moving
+                    to
+                    the more populous southern and southeastern regions
+                    The fire mainly occurred on the southeast coast of Australia, which is the most densely
+                    populated
+                    area
+                    of the continent
+                </section>
+            </div>
 
-            </section>
+            <div id="area">
+                <section id="areachart" style="width: 100%;"> </section>
+                <section style="font-size: 0.8rem;padding: 10px;">
+                    September 2019 was the month with the least number of fires, but with the advent of November and
+                    December, the number of fires increased sharply.
+                    Although the number of fires in late November has a downward trend, after entering December, the
+                    overall
+                    increase has occurred.
+                    The proportion of fires occurring during the day continues to increase. This shows that with dry
+                    climates and rising temperatures, the risk of fires is getting higher and higher.
+
+                </section>
+            </div>
+            <div id="scatter">
+                <section id="scatterchart" style="width: 100%;"> </section>
+                <section style="font-size: 0.8rem;">
+                    There is no strong correlation between the power of the fire and the area of the flame.
+                    Even the duration of the fire has a weak correlation with power and area.
+                    We can see that small fires are unusually frequent and frequent. These small fires and small fires
+                    constitute a continuous fire in Australia. They have brought great difficulties to the rescue.
+                    It also caused the environment to suffer greater pollution.
+
+                </section>
+            </div>
+            <div id="pie">
+                <section id="piechart" style="width: 100%;"></section>
+                <section style="font-size: 0.8rem;">
+                    In general, the proportion of fires in the daytime is higher than that at night.
+
+                </section>
+            </div>
+            <div id="bar">
+                <section id="barchart" style="width: 100%;"></section>
+                <section style="font-size: 0.8rem;">
+
+                    NRT VIIRS 375 m Active Fire product VNP14IMGT.
+                    MODIS Collection 6 NRT Hotspot / Active Fire Detections MCD14DL.
+                </section>
+            </div>
 
 
-            <!-- scatter -->
 
-            <section style="position: absolute; top:1660px;left:50%;width:45%;font-size: 0.8rem;">
-                There is no strong correlation between the power of the fire and the area of the flame.
-                Even the duration of the fire has a weak correlation with power and area.
-                We can see that small fires are unusually frequent and frequent. These small fires and small fires
-                constitute a continuous fire in Australia. They have brought great difficulties to the rescue.
-                It also caused the environment to suffer greater pollution.
-
-            </section>
-
-            <!-- scatter -->
-
-            <section style="position: absolute; top:1260px;left:15%;width:5%;font-size: 0.8rem;">
-
-                NRT VIIRS 375 m Active Fire product VNP14IMGT.
-                MODIS Collection 6 NRT Hotspot / Active Fire Detections MCD14DL.
-            </section>
         </section>
 
     </article>
@@ -159,11 +172,11 @@
 <script type="text/javascript">
     // https: //raw.githubusercontent.com/alwaysblazing/Australia-State-TopoJson-MapChart/master/au-states-topo.json
 
-    vegaEmbed("#map", "map.json");
-    vegaEmbed("#area", "area.json");
-    vegaEmbed("#scatter", "scatter.json");
-    vegaEmbed("#pie", "pie.json");
-    vegaEmbed("#bar", "bar.json");
+    vegaEmbed("#mapchart", "map.json");
+    vegaEmbed("#areachart", "area.json");
+    vegaEmbed("#scatterchart", "scatter.json");
+    vegaEmbed("#piechart", "pie.json");
+    vegaEmbed("#barchart", "bar.json");
 
     // https://raw.githubusercontent.com/Jiaxin0403/FIT3179-/main/data.csv
 </script>

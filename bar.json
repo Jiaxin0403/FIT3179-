@@ -10,7 +10,7 @@
   },
 
   "width": "container",
-  "height": "container",
+  "height": 1800,
   "transform": [
     {
       "aggregate": [

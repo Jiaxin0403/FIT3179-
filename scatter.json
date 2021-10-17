@@ -9,7 +9,7 @@
     "text": "Frp vs Scan"
   },
   "width": "container",
-  "height": "container",
+  "height": 400,
   "layer": [
     {
       "mark": { "type": "point", "tooltip": { "content": "data" } },

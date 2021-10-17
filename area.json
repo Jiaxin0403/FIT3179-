@@ -6,7 +6,7 @@
   },
  
   "width": "container",
-  "height": "container",
+  "height": 350,
 
   "data": {
     "url": "https://raw.githubusercontent.com/Jiaxin0403/FIT3179-/main/data.csv"
